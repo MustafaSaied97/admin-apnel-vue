@@ -1,8 +1,8 @@
 <template>
  <div>
   <v-app id="inspire">
-    <Header @toggleDrawer="toggleDrawer"/>
     <SideBar :drawer="drawer"/>
+    <Header @toggleDrawer="toggleDrawer"/>
     
 
     <v-main>
@@ -44,9 +44,9 @@
           </v-col>
         </v-row>
       </v-container>
+      <router-view/>
     </v-main>
   </v-app>
-  <router-view/>
  </div>
 </template>
 
