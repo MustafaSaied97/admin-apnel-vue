@@ -1,17 +1,19 @@
 <template>
     <v-navigation-drawer :modelValue="drawer" @update:modelValue="drawer = $event">
-        <v-sheet
+        <v-img
           color="grey-lighten-4"
-          class="pa-4"
+          class="text-center"
+          src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"
+          
         >
           <v-avatar
-            class="mb-4"
+            class="mb-4 ma-4"
             color="grey-darken-1"
             size="64"
           ></v-avatar>
   
           <div>john@google.com</div>
-        </v-sheet>
+        </v-img>
   
         <v-divider></v-divider>
   
@@ -36,10 +38,11 @@
         drawer:Boolean,
     })
     const links = [
-        ['mdi-inbox-arrow-down','Inbox'],
-        ['mdi-send', 'Send'],
-        ['mdi-delete', 'Trash'],
-        ['mdi-alert-octagon', 'Spam'],
+        ["mdi-microsoft-windows", "Dashboard"],
+        ["mdi-account", "Profile"],
+        ["mdi-clipboard-list-outline", "Products"],
+        ["mdi-card-account-details-outline", "Orders"],
+        ["mdi-cog", "System Setting"],
       ]
 </script>
 
