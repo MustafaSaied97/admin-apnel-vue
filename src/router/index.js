@@ -20,6 +20,14 @@ const routes = [
     name: 'DashBoard',
     component: DashBoard
 
+  },
+  {
+    name:'Home',
+    redirect:'/dashboard'
+  },
+  {
+    path:'/:catchAll(.*)',
+    redirect:'/dashboard'
   }
 ]
 
