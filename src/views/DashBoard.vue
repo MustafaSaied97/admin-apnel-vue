@@ -1,5 +1,20 @@
 <template>
-    <v-container class="py-8 "  fluid>
+      <v-snackbar
+       variant="text"
+        v-model="snackbar"
+        location="top right"
+      > 
+        <v-alert
+        type="success"
+        title="Alert title"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi"
+        
+        >
+          <v-btn icon="$close" size="small" variant="text" @click="snackbar = false"></v-btn>
+        </v-alert>
+        
+      </v-snackbar>
+      <v-container class="py-8 "  fluid>
       <!-- <v-row  class="flex-nowrap" >
           <v-col  class="d-flex justify-center">
             <h3>Dashboard</h3>
@@ -12,8 +27,8 @@
       <!-- like abovr -->
       <div class="d-flex justify-space-between align-center">
         <h3>das</h3>
-        <v-btn>cdcd</v-btn>
-      </div>
+        <v-btn color="success" variant="text" @click="snackbar = true"> open </v-btn>
+    </div>
       <v-row>
         <v-col lg="6" cols="12" >
           <v-alert
@@ -123,48 +138,50 @@
 </template>
 
 <script setup>
+  import { ref } from 'vue'
   const  desserts =[
-          {
-            name: 'Frozen Yogurt',
-            calories: 159,
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-          },
-        ]
+    {
+      name: 'Frozen Yogurt',
+      calories: 159,
+    },
+    {
+      name: 'Ice cream sandwich',
+      calories: 237,
+    },
+    {
+      name: 'Eclair',
+      calories: 262,
+    },
+    {
+      name: 'Cupcake',
+      calories: 305,
+    },
+    {
+      name: 'Gingerbread',
+      calories: 356,
+    },
+    {
+      name: 'Jelly bean',
+      calories: 375,
+    },
+    {
+      name: 'Lollipop',
+      calories: 392,
+    },
+    {
+      name: 'Honeycomb',
+      calories: 408,
+    },
+    {
+      name: 'Donut',
+      calories: 452,
+    },
+    {
+      name: 'KitKat',
+      calories: 518,
+    },
+  ]
+  const snackbar=ref(true)
 </script>
 
 <style lang="scss" scoped>
