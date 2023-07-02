@@ -12,9 +12,9 @@
             ></v-text-field>
     
         <v-spacer></v-spacer>
-        <v-menu>
+        <v-menu >
           <template v-slot:activator="{ props }">
-            <v-btn class="text-none" v-bind="props" stacked >
+            <v-btn class=" mx-4 text-none" v-bind="props" stacked >
               <v-badge :content="itemLen" color="error">
                 <v-icon>mdi-bell-outline</v-icon>
               </v-badge>
@@ -49,7 +49,7 @@
         >
           
           <template v-slot:activator="{ props }">
-            <v-chip pill v-bind="props" link>
+            <v-chip class="mx-4" pill v-bind="props" link>
               <v-avatar start image="https://cdn.vuetifyjs.com/images/john.png"></v-avatar>
               John Leider
             </v-chip>
@@ -155,7 +155,10 @@
             </v-list>
           </v-card>
            
-        </v-menu>      
+        </v-menu>  
+
+
+        <v-btn class="mx-4" :icon="theme==='light'?'mdi-weather-sunny':'mdi-weather-night'" @click="$emit('toggletheme')" ></v-btn>    
       </v-app-bar>  
 </template>
 
@@ -163,7 +166,10 @@
 import { computed,ref} from 'vue';
 
     const emit =defineEmits([
-        'toggleDrawer',
+        'toggleDrawer','toggletheme'
+    ])
+    const props =defineProps([
+        'theme'
     ])
     // const items= [
     //     { icon:'mdi-inbox-arrow-down',title: 'Inbox',color:'info',content:'12' },

@@ -1,8 +1,8 @@
 <template>
  <div>
-  <v-app id="inspire" theme="light">
+  <v-app id="inspire" :theme="theme">
     <SideBar :drawer="drawer"/>
-    <Header @toggleDrawer="toggleDrawer"/>
+    <Header @toggleDrawer="toggleDrawer" @toggletheme="toggletheme" :theme="theme"/>
     <v-main>
       <router-view/>
     </v-main>
@@ -15,8 +15,12 @@
   import { ref } from 'vue'
   
   const drawer = ref(false)
+  const theme = ref('light')
 
   const toggleDrawer=()=>{
     drawer.value = !drawer.value
+  }
+  const toggletheme=()=>{
+    theme.value =theme.value==='light'? 'dark':'light'
   }
 </script>
