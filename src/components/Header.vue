@@ -163,7 +163,7 @@
 </template>
 
 <script setup>
-import { computed,ref} from 'vue';
+import { computed,ref,defineEmits,defineProps} from 'vue';
 
     const emit =defineEmits([
         'toggleDrawer','toggletheme'

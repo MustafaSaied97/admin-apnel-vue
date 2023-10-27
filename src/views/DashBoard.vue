@@ -15,19 +15,9 @@
         
       </v-snackbar>
       <v-container class="py-8 "  fluid>
-      <!-- <v-row  class="flex-nowrap" >
-          <v-col  class="d-flex justify-center">
-            <h3>Dashboard</h3>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col  class="d-flex justify-center">
-            <v-btn>Dashboard</v-btn>
-          </v-col>
-      </v-row> -->
       <!-- like abovr -->
       <div class="d-flex justify-space-between align-center">
-        <h3>das</h3>
-        <v-btn color="success" variant="text" @click="snackbar = true"> open </v-btn>
+        <v-btn color="success" variant="text" @click="snackbar = true"> open snack bar </v-btn>
     </div>
       <v-row>
         <v-col lg="6" cols="12" >
@@ -45,11 +35,11 @@
               <v-card>
                 <v-card-text class="d-flex justify-space-between  align-center">
                     <div>
-                      <h4>dsds</h4>
-                      <p>dsds</p>
+                      <h4>card title</h4>
+                      <p>card description</p>
                     </div>
                     <v-avatar color="red">
-                        <span>fsd</span>
+                        <span>icon</span>
                     </v-avatar>
                 </v-card-text>
               </v-card>
@@ -108,41 +98,6 @@
         </v-card>
         </v-col>
       </v-row>
-      <!-- table1 -->
-      <!-- <v-table  class="elevation-4 mt-5 rounded-lg">
-        <thead>
-          <tr>
-            <th class="text-left">
-              Name
-            </th>
-            <th class="text-left">
-              Calories
-            </th>
-            <th class="text-left">
-              Calories
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="item in desserts"
-            :key="item.name"
-          >
-            <td>{{ item.name }}</td>
-            <td>{{ item.calories }}</td>
-            <td>{{ item.calories }}</td>
-          </tr>
-        </tbody>
-      </v-table> -->
-
-      <!-- table2 -->
-      <!-- <v-data-table
-        v-model:items-per-page="itemsPerPage"
-        :headers="headers"
-        :items="desserts"
-        item-value="name"
-        class="elevation-4 mt-5 rounded-lg"
-      ></v-data-table> -->
 
       <v-data-table
         :headers="headers"
@@ -159,7 +114,7 @@
             <v-spacer></v-spacer>
 
             <v-dialog v-model="dialog" max-width="500px">
-
+              
               <template v-slot:activator="{ props }">
                 <v-btn color="primary" dark class="mb-2" v-bind="props" > New Item </v-btn>
               </template>
@@ -244,150 +199,7 @@
 <script setup>
   import { VDataTable } from 'vuetify/labs/VDataTable'
   import { ref,computed,watch ,onMounted,nextTick} from 'vue'
-  // table1
-  // const  desserts =[
-  //   {
-  //     name: 'Frozen Yogurt',
-  //     calories: 159,
-  //   },
-  //   {
-  //     name: 'Ice cream sandwich',
-  //     calories: 237,
-  //   },
-  //   {
-  //     name: 'Eclair',
-  //     calories: 262,
-  //   },
-  //   {
-  //     name: 'Cupcake',
-  //     calories: 305,
-  //   },
-  //   {
-  //     name: 'Gingerbread',
-  //     calories: 356,
-  //   },
-  //   {
-  //     name: 'Jelly bean',
-  //     calories: 375,
-  //   },
-  //   {
-  //     name: 'Lollipop',
-  //     calories: 392,
-  //   },
-  //   {
-  //     name: 'Honeycomb',
-  //     calories: 408,
-  //   },
-  //   {
-  //     name: 'Donut',
-  //     calories: 452,
-  //   },
-  //   {
-  //     name: 'KitKat',
-  //     calories: 518,
-  //   },
-  // ]
-
-  //  table2
-  //   const itemsPerPage= ref(5)
-  //   const headers= [
-  //     {
-  //       title: 'Dessert (100g serving)',
-  //       align: 'start',
-  //       sortable: false,
-  //       key: 'name',
-  //     },
-  //     { title: 'Calories', align: 'end', key: 'calories' },
-  //     { title: 'Fat (g)', align: 'end', key: 'fat' },
-  //     { title: 'Carbs (g)', align: 'end', key: 'carbs' },
-  //     { title: 'Protein (g)', align: 'end', key: 'protein' },
-  //     { title: 'Iron (%)', align: 'end', key: 'iron' },
-  //   ]
-  //   const  desserts= [
-  //     {
-  //       name: 'Frozen Yogurt',
-  //       calories: 159,
-  //       fat: 6.0,
-  //       carbs: 24,
-  //       protein: 4.0,
-  //       iron: '1',
-  //     },
-  //     {
-  //       name: 'Jelly bean',
-  //       calories: 375,
-  //       fat: 0.0,
-  //       carbs: 94,
-  //       protein: 0.0,
-  //       iron: '0',
-  //     },
-  //     {
-  //       name: 'KitKat',
-  //       calories: 518,
-  //       fat: 26.0,
-  //       carbs: 65,
-  //       protein: 7,
-  //       iron: '6',
-  //     },
-  //     {
-  //       name: 'Eclair',
-  //       calories: 262,
-  //       fat: 16.0,
-  //       carbs: 23,
-  //       protein: 6.0,
-  //       iron: '7',
-  //     },
-  //     {
-  //       name: 'Gingerbread',
-  //       calories: 356,
-  //       fat: 16.0,
-  //       carbs: 49,
-  //       protein: 3.9,
-  //       iron: '16',
-  //     },
-  //     {
-  //       name: 'Ice cream sandwich',
-  //       calories: 237,
-  //       fat: 9.0,
-  //       carbs: 37,
-  //       protein: 4.3,
-  //       iron: '1',
-  //     },
-  //     {
-  //       name: 'Lollipop',
-  //       calories: 392,
-  //       fat: 0.2,
-  //       carbs: 98,
-  //       protein: 0,
-  //       iron: '2',
-  //     },
-  //     {
-  //       name: 'Cupcake',
-  //       calories: 305,
-  //       fat: 3.7,
-  //       carbs: 67,
-  //       protein: 4.3,
-  //       iron: '8',
-  //     },
-  //     {
-  //       name: 'Honeycomb',
-  //       calories: 408,
-  //       fat: 3.2,
-  //       carbs: 87,
-  //       protein: 6.5,
-  //       iron: '45',
-  //     },
-  //     {
-  //       name: 'Donut',
-  //       calories: 452,
-  //       fat: 25.0,
-  //       carbs: 51,
-  //       protein: 4.9,
-  //       iron: '22',
-  //     },
-  //   ]
-    onMounted(()=>{
-      initialize()
-    })
+  
   const dialog= ref(false) 
   const dialogDelete= ref(false)                 
   const headers= ref([
@@ -403,34 +215,8 @@
       { title: 'Protein (g)', key: 'protein' },
       { title: 'Actions', key: 'actions', sortable: false },
    ])
-  const desserts= ref([])
-  const editedIndex= ref(-1)
-  const   editedItem= ref({
-      name: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0,
-   })
-   const  defaultItem= ref({
-      name: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0,
-   })
-
-  const formTitle= computed (()=>editedIndex.value === -1 ? 'New Item' : 'Edit Item')
-
-   watch(dialog ,(val)=>{
-    val || close()
-   })  
-   watch(dialogDelete  ,(val)=>{
-    val || closeDelete()
-   })  
-
-   function initialize () {
-    desserts.value = [
+  const snackbar=ref(false)
+  const desserts= ref([
       {
         name: 'Frozen Yogurt',
         calories: 159,
@@ -501,9 +287,42 @@
         carbs: 65,
         protein: 7,
       },
-    ]
-  }
+    ])
+    //crude operation
+  const editedIndex= ref(-1)
+  const   editedItem= ref({
+      name: '',
+      calories: 0,
+      fat: 0,
+      carbs: 0,
+      protein: 0,
+   })
+   const  defaultItem= ref({
+      name: '',
+      calories: 0,
+      fat: 0,
+      carbs: 0,
+      protein: 0,
+   })
 
+  const formTitle= computed (()=>editedIndex.value === -1 ? 'New Item' : 'Edit Item')
+
+   watch(dialog ,(val)=>{
+    val || close()
+   })  
+   watch(dialogDelete  ,(val)=>{
+    val || closeDelete()
+   })  
+
+
+  function save () {
+    if (editedIndex.value > -1) {
+      Object.assign(desserts.value[editedIndex.value], editedItem.value)
+    } else {
+      desserts.value.push(editedItem.value)
+    }
+    close()
+  }
   function editItem (item) {
     editedIndex.value = desserts.value.indexOf(item)
     editedItem.value = Object.assign({}, item)
@@ -537,16 +356,9 @@
     })
   }
 
-  function save () {
-    if (editedIndex.value > -1) {
-      Object.assign(desserts.value[editedIndex.value], editedItem.value)
-    } else {
-      desserts.value.push(editedItem.value)
-    }
-    close()
-  }
-   
-  const snackbar=ref(true)
+  
+
+
 </script>
 
 <style lang="scss" scoped>

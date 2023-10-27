@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer :modelValue="drawer" @update:modelValue="drawer = $event">
+    <v-navigation-drawer :modelValue="drawer" >
         <v-img
           color="grey-lighten-4"
           class="text-center"
@@ -34,9 +34,9 @@
 </template>
 
 <script setup>
-    const props=defineProps({
-        drawer:Boolean,
-    })
+import {watch,defineProps,toRefs} from 'vue'
+    const props=defineProps(['drawer'])//ordefineProps({drawer:Boolean})
+    const { drawer } = toRefs(props)
     const links = [
         ["mdi-microsoft-windows", "Dashboard"],
         ["mdi-account", "Profile"],
@@ -44,6 +44,11 @@
         ["mdi-card-account-details-outline", "Orders"],
         ["mdi-cog", "System Setting"],
       ]
+      // watch(props.drawer, (newDrawer)=>{
+      //   consolelog('drawer',newDrawer)        
+      // })
+      
+      
 </script>
 
 <style>
