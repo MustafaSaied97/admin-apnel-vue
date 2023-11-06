@@ -13,7 +13,15 @@
 <script setup> 
   import {Header,SideBar} from './components' 
   import { ref } from 'vue'
-  
+  useMeta({
+             title: 'Some Page' ,
+             meta:[
+                {property:'og:title',content:'The Rock'},
+                {property:'og:type',content:'video.movie'},
+                {property:'og:url',content:'https://www.imdb.com/title/tt0117500/'},
+                {property:'og:image',content:'https://ia.media-imdb.com/images/rock.jpg'},
+             ]
+            })
   const drawer = ref(false)
   const theme = ref('light')
 
