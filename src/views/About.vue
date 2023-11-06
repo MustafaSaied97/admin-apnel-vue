@@ -17,8 +17,8 @@ export default {
              meta:[
                 {property:'og:title',content:'The Rock'},
                 {property:'og:type',content:'video.movie'},
-                {property:'og:url',content:'https://www.imdb.com/title/tt0117500/'},
-                {property:'og:image',content:'https://ia.media-imdb.com/images/rock.jpg'},
+                {property:'og:url',content:''},
+                {property:'og:image',content:''},
              ]
             })
     }
