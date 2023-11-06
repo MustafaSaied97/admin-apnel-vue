@@ -156,8 +156,18 @@ useMeta({
     {property:'og:title',content:'dashboard'},
     {property:'og:description',content:'dashboard description'},
     {property:'og:type',content:'video.movie'},
-    {property:'og:url',content:''},
+    {property:'og:url',content:'dashboard'},
     {property:'og:image',content:''},
+    {property:'og:image:alt',content:'dashboard_image:alt'},
+    {property:'og:site_name',content:'dashboard_site_name'},
+    {property:'og:locale' ,content:'ar_EG'},
+    { name:"twitter:title" ,content:"dashboard_twitter:title"},
+    { name:"twitter:description" ,content:"dashboard_twitter:description"},
+    { name:"twitter:image" ,content:"dashboard_twitter:image"},
+    { name:'twitter:image:alt' ,content:"dashboard_twitter:image:alt"},
+    { name:"twitter:site" ,content:"dashboard_twitter:site"},
+    { name:"twitter:creator" ,content:"dashboard_twitter:creator"},
+
   ]
 })
 const dialog = ref(false);
