@@ -1,6 +1,6 @@
 <template>
   <metainfo>
-    <template v-slot:title="{ content }">{{ content ? `${content} | SITE_NAME` : `SITE_NAME` }}</template>
+    <template v-slot:title="{ content }">{{ content ? `${content}` : `SITE_NAME` }}</template>
   </metainfo>
   <v-snackbar variant="text" v-model="snackbar" location="top right">
     <v-alert type="success" title="Alert title" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi">
@@ -149,16 +149,17 @@
 <script setup>
 import { VDataTable } from 'vuetify/labs/VDataTable';
 import { ref, computed, watch, onMounted, nextTick } from 'vue';
-// import { useMeta } from 'vue-meta'
-// useMeta({
-//   title: 'Some Page' ,
-//   meta:[
-//     {property:'og:title',content:'The Rock'},
-//     {property:'og:type',content:'video.movie'},
-//     {property:'og:url',content:''},
-//     {property:'og:image',content:''},
-//   ]
-// })
+import { useMeta } from 'vue-meta'
+useMeta({
+  title: 'dashboard' ,
+  meta:[
+    {property:'og:title',content:'dashboard'},
+    {property:'og:description',content:'dashboard description'},
+    {property:'og:type',content:'video.movie'},
+    {property:'og:url',content:''},
+    {property:'og:image',content:''},
+  ]
+})
 const dialog = ref(false);
 const dialogDelete = ref(false);
 const headers = ref([
