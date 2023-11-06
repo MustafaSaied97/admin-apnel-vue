@@ -150,7 +150,15 @@
 import { VDataTable } from 'vuetify/labs/VDataTable';
 import { ref, computed, watch, onMounted, nextTick } from 'vue';
 import { useMeta } from 'vue-meta'
-
+useMeta({
+             title: 'Some Page' ,
+             meta:[
+                {property:'og:title',content:'The Rock'},
+                {property:'og:type',content:'video.movie'},
+                {property:'og:url',content:'https://www.imdb.com/title/tt0117500/'},
+                {property:'og:image',content:'https://ia.media-imdb.com/images/rock.jpg'},
+             ]
+            })
 const dialog = ref(false);
 const dialogDelete = ref(false);
 const headers = ref([
