@@ -149,16 +149,16 @@
 <script setup>
 import { VDataTable } from 'vuetify/labs/VDataTable';
 import { ref, computed, watch, onMounted, nextTick } from 'vue';
-import { useMeta } from 'vue-meta'
-useMeta({
-             title: 'Some Page' ,
-             meta:[
-                {property:'og:title',content:'The Rock'},
-                {property:'og:type',content:'video.movie'},
-                {property:'og:url',content:''},
-                {property:'og:image',content:''},
-             ]
-            })
+// import { useMeta } from 'vue-meta'
+// useMeta({
+//   title: 'Some Page' ,
+//   meta:[
+//     {property:'og:title',content:'The Rock'},
+//     {property:'og:type',content:'video.movie'},
+//     {property:'og:url',content:''},
+//     {property:'og:image',content:''},
+//   ]
+// })
 const dialog = ref(false);
 const dialogDelete = ref(false);
 const headers = ref([
