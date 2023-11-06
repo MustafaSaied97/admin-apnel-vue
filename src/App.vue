@@ -11,9 +11,9 @@
 </template>
 
 <script setup> 
-  import {Header,SideBar} from './components' 
+  import {Header,SideBar} from './components'
   import { ref } from 'vue'
-
+  
   const drawer = ref(false)
   const theme = ref('light')
 
