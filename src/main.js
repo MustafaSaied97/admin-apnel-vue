@@ -11,6 +11,5 @@ const app=createSSRApp(App)
   app.use(router)
   app.use(vuetify)
   app.use(createMetaManager())
-  await router.isReady()
   app.mount('#app')
 
